@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width"/>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <environment include="Development,Production">
+<link href="~/lib/bootstrap/css/bootstrap.css" rel="stylesheet" />
+<script src="~/lib/jquery/jquery.js"></script>
+
+    </environment>
+    @RenderSection("styles",false)
+    
+    <style>
+        body{
+            font-family: 'Century Gothic';
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>TechCompany</h1>
+
+    </div>
+    <div class="container my-3">
+        <nav class="nav nav-pills bg-light">
+            <a class="nav-link active" href="/">Home</a>
+            <a class="nav-link" href="#">Link</a>
+            <a class="nav-link alert-dark" asp-action="index" asp-controller="Products" >Products</a>
+        </nav>
+
+    </div>
+    <div class="container">
+        @RenderBody()
+    </div>
+    <footer class="container">
+        <p class="text-center"> &copy; @DateTime.Now.Year -www.piit.us</p>
+    </footer>
+    <environment include="Development,Production">
+
+        <script src="~/lib/bootstrap/js/bootstrap.js"></script>
+    </environment>
+</body>
+</html>

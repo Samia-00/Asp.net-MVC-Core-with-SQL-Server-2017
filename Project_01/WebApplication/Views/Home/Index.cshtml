@@ -1,0 +1,35 @@
+﻿@model IEnumerable<Customer>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Cutomer List</h1>
+<div class="row">
+    <div class="col">
+        <table class="table table-bordered table-striped table-hover" >
+            <thead class="thead-dark">
+                <tr>
+                    <th>Company Name</th>
+                    <th>City</th>
+                    <th>Country</th>
+
+                </tr>
+
+            </thead>
+            <tbody>
+                @foreach(var c in Model)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(x => c.CompanyName)</td>
+                     <td>@Html.DisplayFor(x => c.City)</td>
+                     <td>@Html.DisplayFor(x => c.Country)</td>
+
+                </tr>
+            }
+            </tbody>
+            </table>
+    </div>
+
+</div>
+
