@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <environment include="Development,Production">
+        <link href="~/lib/bootstrap/css/bootstrap.css" rel="stylesheet" />
+        <script src="~/lib/jquery/jquery.js"></script>
+    </environment>
+    @RenderSection("styles",false)
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Coaching Centre</h1>
+        </header>
+    </div>
+    <div class="container">
+        <nav class="nav nav-pills bg-light  my-3">
+            <a class="nav-link active">Home</a>
+            <a class="nav-link ">About</a>
+            <a class="nav-link" asp-action="Index" asp-controller="Home">Batches</a>
+
+        </nav>
+    </div>
+    <div class="container">
+        @RenderBody()
+    </div>
+    <footer class="container">
+        <hr />
+        <p class="text-center">
+            &copy;@DateTime.Now.Year-www.ngvalley.net
+        </p>
+
+    </footer>
+    <environment include="Development,Production">
+
+        <script src="~/lib/bootstrap/js/bootstrap.js"></script>
+
+    </environment>
+    @RenderSection("scripts",false)
+</body>
+</html>
