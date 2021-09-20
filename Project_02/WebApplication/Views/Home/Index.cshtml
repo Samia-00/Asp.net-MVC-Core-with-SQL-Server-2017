@@ -1,0 +1,41 @@
+﻿@model IEnumerable<WebApplication.Models.ViewModel.LaborWorkVM>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Labor Work Info</h1>
+<div class="row">
+    <div class="col">
+        <table class="table table-bordered table-striped table-hover">
+            <thead class="thead-dark">
+                <tr>
+                    <th>@Html.DisplayNameFor(x => x.LobarName)</th>
+                    <th>@Html.DisplayNameFor(x => x.PayRate)</th>
+                    <th>@Html.DisplayNameFor(x => x.StartDate)</th>
+                    <th>@Html.DisplayNameFor(x => x.FinishDate)</th>
+                    <th>@Html.DisplayNameFor(x => x.DaysWorked)</th>
+                    <th>@Html.DisplayNameFor(x => x.TotalBill)</th>
+
+                </tr>
+
+            </thead>
+            <tbody>
+                @foreach (var l in Model)
+                {
+                <tr>
+                    <td>@l.LobarName</td>
+                    <td>@l.PayRate</td>
+                    <td>@l.StartDate.ToString("yyyy-MM-dd")</td>
+                    <td>@l.FinishDate?.ToString("yyyy-MM-dd")</td>
+                    <td>@l.DaysWorked</td>
+                    <td>@l.TotalBill</td>
+
+                </tr>
+                }
+            </tbody>
+        </table>
+
+    </div>
+
+</div>
+
